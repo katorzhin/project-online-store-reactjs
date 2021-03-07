@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import FinishPurchase from "./FinishPurchase";
 
 class Cart extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {show: true, productsList: [], finishPurchaseForm: false}
@@ -30,14 +31,14 @@ class Cart extends React.Component {
         localStorage.clear();
     };
 
-    finishPurchase = () => {
+    finishPurchase = () =>{
         this.setState({finishPurchaseForm: true})
     };
 
     render() {
-        if (this.state.finishPurchaseForm) {
+        if(this.state.finishPurchaseForm){
             return <FinishPurchase/>
-        } else {
+        }else{
             return (
                 <Modal show={this.state.show} onHide={this.handleClose} animation={false}>
                     <Modal.Header closeButton>
@@ -57,6 +58,7 @@ class Cart extends React.Component {
                                     <td>X</td>
                                 </tr>
                             ))}
+
                         </table>
                     </Modal.Body>
                     <Modal.Footer>
